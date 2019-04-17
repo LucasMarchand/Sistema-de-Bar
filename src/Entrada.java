@@ -16,14 +16,20 @@ public class Entrada {
         JOptionPane.showMessageDialog(null, "Nome Completo: "+nomeCompleto,"Informação",JOptionPane.INFORMATION_MESSAGE);
         */
         // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        novaEntrada();
+        // novaEntrada();
+        Opcoes();
     }
 
     public static void novaEntrada(){
 
-
         PainelEntrada P = new PainelEntrada();
         P.setVisible(true);
+    }
+
+    public static void Opcoes(){
+
+        PainelOpcoes PO = new PainelOpcoes();
+        PO.setVisible(true);
     }
 
 }

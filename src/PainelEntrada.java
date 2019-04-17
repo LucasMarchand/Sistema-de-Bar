@@ -15,7 +15,9 @@ public class PainelEntrada extends JFrame{
     private JLabel label_idade;
     private JLabel label_genero;
     private JButton okButton;
-    private String FileListaBar = "C:\\Users\\LucasMarchand\\IdeaProjects\\SistemaBar\\Lista.txt";
+    private JTextField textField_nsocio;
+    private JLabel label__nsocio;
+    private String FileListaBar = "H:\\Git\\Sistema-de-Bar\\Lista.txt";
 
 
     public PainelEntrada(){
@@ -31,10 +33,10 @@ public class PainelEntrada extends JFrame{
                         textField_nome.getText() + ";" +
                         textField_cpf.getText() + ";" +
                         textField_idade.getText() + ";" +
-                        textField_genero.getText() ;
+                        textField_genero.getText() + ";" +
+                        textField_nsocio.getText() ;
                 System.out.println(registro);
                 //JOptionPane.showMessageDialog;
-
 
                 try {
                     boolean anexar = false;
@@ -43,15 +45,14 @@ public class PainelEntrada extends JFrame{
                     if (f.length() != 0L)
                         anexar = true;
 
-                    FileWriter writer = new FileWriter(new File(FileListaBar), anexar);
-                    BufferedWriter bufferedWriter = new BufferedWriter(writer);
+                    FileWriter fw = new FileWriter(new File(FileListaBar), anexar);
+                    PrintWriter pw = new PrintWriter(fw);
 
-                    bufferedWriter.write(registro);
+                    pw.println(registro);
 
-                    writer.flush();
-                    writer.close();
-                    //bufferedWriter.flush();
-                    bufferedWriter.close();
+                    pw.close();
+                    fw.close();
+
                 } catch (IOException erro){
                     erro.printStackTrace();
                 }
